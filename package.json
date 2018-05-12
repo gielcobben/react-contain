@@ -1,0 +1,139 @@
+{
+  "name": "react-contain",
+  "version": "1.0.0",
+  "description": "A container that makes its content accommodate the max width OR height possible, while maintaining an aspect ratio",
+  "main": "dist/react-contain.js",
+  "files": [
+    "*.js",
+    "*.md",
+    "dist"
+  ],
+  "scripts": {
+    "build": "node ./tools/build.js",
+    "clean": "rimraf ./dist && rimraf ./coverage",
+    "lint": "eslint src",
+    "precommit": "lint-staged && npm run test",
+    "prepublish": "npm run build",
+    "test": "jest",
+    "test:coverage": "npm run test -- --coverage",
+    "test:coverage:deploy": "npm run test:coverage && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janoist1/react-contain.git"
+  },
+  "keywords": [
+    "library",
+    "react",
+    "contain",
+    "aspect",
+    "ratio",
+    "max",
+    "width",
+    "height"
+  ],
+  "author": "Istvan Jano <janoist1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janoist1/react-contain/issues"
+  },
+  "homepage": "https://github.com/janoist1/react-contain#readme",
+  "dependencies": {
+    "element-resize-detector": "^1.1.14"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.0.0-0",
+    "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0-0 || ^16.0.0"
+  },
+  "devDependencies": {
+    "app-root-dir": "1.0.2",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "8.2.3",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-3": "6.24.1",
+    "babel-register": "^6.26.0",
+    "change-case": "^3.0.2",
+    "codecov": "^3.0.1",
+    "cross-env": "^5.0.5",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.3.0",
+    "gzip-size": "^4.0.0",
+    "husky": "^0.14.3",
+    "in-publish": "2.0.0",
+    "jest": "^22.4.3",
+    "lint-staged": "^7.0.5",
+    "prettier": "^1.12.1",
+    "pretty-bytes": "4.0.2",
+    "prop-types": "^15.5.10",
+    "ramda": "^0.25.0",
+    "react": "^16.3.2",
+    "react-addons-test-utils": "^15.6.0",
+    "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.3.2",
+    "readline-sync": "1.4.9",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.58.2",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "airbnb",
+      "prettier"
+    ],
+    "rules": {
+      "camelcase": 0,
+      "import/prefer-default-export": 0,
+      "import/no-extraneous-dependencies": 0,
+      "no-nested-ternary": 0,
+      "no-underscore-dangle": 0,
+      "react/no-array-index-key": 0,
+      "react/react-in-jsx-scope": 0,
+      "semi": [
+        2,
+        "never"
+      ],
+      "react/forbid-prop-types": 0,
+      "react/jsx-filename-extension": 0,
+      "react/sort-comp": 0
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "dist/",
+    "coverage/"
+  ],
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write \"src/**/*.js\"",
+      "git add"
+    ]
+  }
+}
